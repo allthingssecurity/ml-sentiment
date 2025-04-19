@@ -18,6 +18,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run pytest
+        env:
+         PYTHONPATH: .
         run: pytest --maxfail=1 --disable-warnings -q
 
   docker-build-push:
